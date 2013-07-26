@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>data</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Omaha Public Library</string>
+			<key>address</key>
+			<string>123 Main St. Omaha, NE</string>
+			<key>phone</key>
+			<string>(402) 555-5555</string>
+			<key>lat</key>
+			<real>34.0569771</real>
+			<key>lng</key>
+			<real>-118.2525601</real>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Papillion Public Library</string>
+			<key>address</key>
+			<string>123 Main St. Papllion, NE</string>
+			<key>phone</key>
+			<string>(402) 555-5555</string>
+			<key>lat</key>
+			<real>36.778261</real>
+			<key>lng</key>
+			<real>-119.4179324</real>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Baright Public Library</string>
+			<key>address</key>
+			<string>123 Main St. Ralston, NE</string>
+			<key>phone</key>
+			<string>(402) 555-5555</string>
+			<key>lat</key>
+			<real>42.1241627</real>
+			<key>lng</key>
+			<real>-80.09967759999999</real>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>LaVista Public Library</string>
+			<key>address</key>
+			<string>123 Main St. Papllion, NE</string>
+			<key>phone</key>
+			<string>(402) 555-5555</string>
+			<key>lat</key>
+			<real>9.9609592</real>
+			<key>lng</key>
+			<real>-84.0757333</real>
+		</dict>
+	</array>
+</dict>
+</plist>

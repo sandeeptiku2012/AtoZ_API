@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Attorneys</string>
+		<key>id</key>
+		<string>8111001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Banks</string>
+		<key>id</key>
+		<string>6021001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bars</string>
+		<key>id</key>
+		<string>5813011,5813013</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Beauty Salons</string>
+		<key>id</key>
+		<string>7231001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Coffee Shops</string>
+		<key>id</key>
+		<string>5812012</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Dentists</string>
+		<key>id</key>
+		<string>8021001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Doctors</string>
+		<key>id</key>
+		<string>8011001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Florists</string>
+		<key>id</key>
+		<string>5992001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Gas Stations</string>
+		<key>id</key>
+		<string>5541001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Golf Courses</string>
+		<key>id</key>
+		<string>7992001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Groceries</string>
+		<key>id</key>
+		<string>5411001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Health Clubs Studios &amp; Gymnasiums</string>
+		<key>id</key>
+		<string>7991001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hotels &amp; Motels</string>
+		<key>id</key>
+		<string>7011001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Libraries</string>
+		<key>id</key>
+		<string>8231001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Pizza</string>
+		<key>id</key>
+		<string>5812003</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Repair Shops</string>
+		<key>id</key>
+		<string>7699001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Restaurants</string>
+		<key>id</key>
+		<string>5812001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Taxi</string>
+		<key>id</key>
+		<string>4121001</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Theatres</string>
+		<key>id</key>
+		<string>7832001</string>
+	</dict>
+</array>
+</plist>

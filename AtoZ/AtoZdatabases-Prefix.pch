@@ -1,0 +1,154 @@
+//
+// Prefix header for all source files of the 'AtoZ' target in the 'AtoZ' project
+//
+
+// http://atoz-mobile-prod.elasticbeanstalk.com/atozdatabases-mobile - PRODUCTION URL
+// http://dev.atozdatabases.com/atozdatabases-mobile - DEV URL
+// http://172.16.72.115:8080/atozdatabases-mobile/
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+//Rajeev Start
+#define IOS_OLDER_THAN__IPHONE_6_0        ( [ [ [ UIDevice currentDevice ] systemVersion ] floatValue ] < 6.0 )
+#define IOS_NEWER_OR_EQUAL_TO__IPHONE_6_0 ( [ [ [ UIDevice currentDevice ] systemVersion ] floatValue ] >= 6.0 )
+//Rajeev End
+    #import "AppDelegate.h"
+#import "UIDevice+IdentifierAddition.h"
+    #define APP_DEL  (AppDelegate*)[[UIApplication sharedApplication] delegate]
+
+    #import "REST.h"
+    #import "iNetMngr.h"
+
+    #import "WebRqst.h"
+    #import "CommonParser.h"
+    #import "AboutVctr.h"
+    #import "EasyTracker.h"
+    #import "GANTracker.h"
+
+
+
+   #define WEB_NEAR_BY_LIB     @"http://api.atozdatabases.com/searchapi/library/listing/latitude/%lf/longitude/%lf/page/0"
+
+
+    //#define WEB_NEAR_BY_LIB     @"http://api-test.atozdatabases.com/atozdatabases-mobile/library/listing/latitude/%lf/longitude/%lf/page/0"
+
+
+   
+
+   //#define WEB_NEAR_BY_LIB     @"http://api-test.atozdatabases.com/searchapi/library/listing/latitude/33.021874/longitude/-89.763219/page/0" 
+
+
+    //#define WEB_RCRD_DTL        @"http://api.atozdatabases.com/searchapi/library/record/detail/type/%@/record/%@"
+    #define WEB_RCRD_DTL        @"search/recordDetail/%@/Id/%@"
+
+    #define WEB_IMAGES_URL      @"http://api.atozdatabases.com"
+
+    #define WEB_AUTH_URL        @"http://api.atozdatabases.com/searchapi/library/authentication/account/%@/card/%@"
+    #define WEB_LIB_REST_URL    @"http://api.atozdatabases.com/searchapi/library/listing/"
+
+
+    // set api-test.atozdatabases.com for dev environment
+    // set api.atozdatabases.com for production environment
+
+// zipcode
+//http://blrwks0044/searchapi/v1/token/request  
+
+//Rajeev Start
+enum SERVICE_TYPE {
+    NON = 0,
+    TOKEN_CREATE = 1,
+    PHYSICAL_STATE = 2,
+    GET_RESULTS = 3,
+    GET_DETAILS = 4,
+    GET_YEARS_LIST_REVENUE = 5
+};
+//Rajeev End
+      //#define WEB_SERVICE_URL     @"http://api.atozdatabases.com/searchapi/v1/"
+      #define WEB_SERVICE_URL     @"http://datairis-development.elasticbeanstalk.com/V1/"//@"http://www.datairis.co/V1/"
+//Rajeev Start
+//    #define WEB_TOKEN_RQST      @"token/request"
+//    #define WEB_TOKEN_RQST      @"http://www.datairis.co/V1/auth/subscriber/?AccessToken=t1"
+      #define WEB_TOKEN_RQST @"auth/subscriber/?AccessToken=t1"
+      #define WEB_YEARS_LIST_REVENUE @"personalization/portlet/business_search_detail_historical_data"
+//Rajeev End
+
+
+    //#define WEB_CLEAR_CRITERIA      [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"criteria/database/mobile-combined/userip/10.0.0.2?token=%@"]
+    //Rajeev Start
+    //#define WEB_CLEAR_CRITERIA      [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"delete/criteria?token=%@"]
+    #define WEB_CLEAR_CRITERIA      @"criteria/search/deleteall/combined"
+    //Rajeev End
+
+    //#define WEB_CREATE_SESSION      [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"initialize/source/atozdatabases.com/username/ankit_vyas/userip/10.0.0.2/version/1.0"]
+
+
+    #define WEB_CREATE_SESSION      [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"create?token=%@"]
+
+    #define WEB_SET_IP               [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"userip/%@?token=%@"]
+
+    #define WEB_SET_DBXES           [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"set/db/mobile-combined?token=%@"]
+
+    #define WEB_SET_UNAME           [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"set/username/%@?token=%@"]
+
+
+   // #define WEB_SET_CRITERIA        [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"criteria/%@/%@/database/mobile-combined/userip/10.0.0.2?token=%@"]
+   //Rajeev Start
+    //#define WEB_SET_CRITERIA        [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"set/criteria/%@/%@?token=%@"]
+    #define WEB_SET_CRITERIA @"criteria/search/addall/combined"
+   //Rajeev End
+
+    //#define WEB_GET_RESULTS         [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"results/userip/10.0.0.2/database/mobile-combined/%@/%@?token=%@"]
+
+    //Rajeev Start
+    //#define WEB_GET_RESULTS         [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"results/%@/%@?token=%@"]
+    #define WEB_GET_RESULTS         @"search/combined/?Start=%@&End=%@"
+    //Rajeev End
+
+    #define WEB_HIDDEN_PARA         [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"set/criteria/Record_Type/M?token=%@"]
+
+    //Rajeev Start
+    //#define WEB_GET_STATES          [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"db/metadata/metadatalookup/Physical_State?token=%@"]
+    //#define WEB_GET_STATES @"http://www.datairis.co/V1/lookup/metadata/business?Search=%@"
+      #define WEB_GET_STATES @"lookup/metadata/business?Search=%@"
+    //Rajeev End
+
+    #define WEB_SET_CATEGORY        [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"set/criteria/sic1/%@?token=%@"]
+
+    #define WEB_SET_BUSINESSTYPE    [NSString stringWithFormat:@"session/%@/%@",[[UIDevice currentDevice] uniqueDeviceIdentifier],@"set/criteria/databasetype/B?token=%@"]
+
+//    #define WEB_CLEAR_CRITERIA      @"session/12345/delete/criteria?token=%@"
+//    #define WEB_CREATE_SESSION      @"session/12345/create?token=%@"
+//    #define WEB_SET_IP              @"session/12345/set/userip/%@?token=%@"
+//    #define WEB_SET_DBXES           @"session/12345/set/db/mobile-combined?token=%@"
+
+//    #define WEB_SET_UNAME           @"session/12345/set/username/%@?token=%@"
+//    #define WEB_SET_CRITERIA        @"session/12345/set/criteria/%@/%@?token=%@"
+
+//    #define WEB_GET_RESULTS         @"session/12345/results/%@/%@?token=%@"
+
+//    #define WEB_HIDDEN_PARA         @"session/12345/set/criteria/Record_Type/M?token=%@"
+//    #define WEB_GET_STATES          @"session/12345/db/metadata/metadatalookup/Physical_State?token=%@"
+//    #define WEB_SET_CATEGORY        @"session/12345/set/criteria/sic1/%@?token=%@"
+//    #define WEB_SET_BUSINESSTYPE    @"session/12345/set/criteria/databasetype/B?token=%@"
+
+    #define USER_NAME               @"Valtech"
+    #define IP_ADDRESS              @"10.0.0.2"
+
+    #define COMMON_PARSER       [CommonParser commonParser]
+
+    #define documentsDirectory_Statement NSString *documentsDirectory; \
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); \
+    documentsDirectory = [paths objectAtIndex:0];
+    
+#import "HJManagedImageV.h"
+#define GlobalCacheManager [(AppDelegate*)[[UIApplication sharedApplication] delegate] objMan]
+
+
+#endif
